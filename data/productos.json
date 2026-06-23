@@ -4,6 +4,7 @@
     "nombre": "Rosca Encofitada",
     "descripcion": "Mini rosca bañada en glaseado dulce y decorada con grageas de colores.",
     "precio": 0.25,
+    "categoria": "Dulces individuales",
     "imagen": "img/rosca-encofitada.png"
   },
   {
@@ -11,6 +12,7 @@
     "nombre": "Bolitas Frutales",
     "descripcion": "Bolitas de azúcar con sabor a frutas. Las favoritas de los niños.",
     "precio": 0.15,
+    "categoria": "Dulces individuales",
     "imagen": "img/bolitas-frutales.jpg"
   },
   {
@@ -18,6 +20,7 @@
     "nombre": "Quesitos",
     "descripcion": "Manjar cubierto por hostias. Suaves y delicados, en forma de quesito.",
     "precio": 0.15,
+    "categoria": "Dulces individuales",
     "imagen": "img/quesitos.jpg"
   },
   {
@@ -25,6 +28,7 @@
     "nombre": "Monjitas",
     "descripcion": "Nuez envuelta en manjar. Un bocado cremoso y tradicional.",
     "precio": 0.25,
+    "categoria": "Dulces individuales",
     "imagen": "img/monjitas.jpg"
   },
   {
@@ -32,6 +36,7 @@
     "nombre": "Frutitas",
     "descripcion": "Frutitas de leche condensada moldeadas a mano. Coloridas y artesanales.",
     "precio": 0.25,
+    "categoria": "Dulces individuales",
     "imagen": "img/frutitas.jpg"
   },
   {
@@ -39,6 +44,7 @@
     "nombre": "Bolitas de Coco",
     "descripcion": "Combinación de manjar y coco rallado. Esponjosas y dulces.",
     "precio": 0.25,
+    "categoria": "Dulces individuales",
     "imagen": "img/bolitas-coco.jpg"
   },
   {
@@ -46,6 +52,7 @@
     "nombre": "Huevitos de Maní",
     "descripcion": "Maní cubierto de manjar. Crujiente por dentro, suave por fuera.",
     "precio": 0.15,
+    "categoria": "Dulces individuales",
     "imagen": "img/huevitos-mani.jpg"
   },
   {
@@ -53,6 +60,7 @@
     "nombre": "Galletas",
     "descripcion": "Galletitas de maíz y arepas. Doradas, caseras y crujientes.",
     "precio": 0.15,
+    "categoria": "Dulces individuales",
     "imagen": "img/galletas.jpg"
   },
   {
@@ -60,6 +68,7 @@
     "nombre": "Cocada",
     "descripcion": "Mini cocada flor de coco fresco. Jugosa y aromática.",
     "precio": 0.30,
+    "categoria": "Dulces individuales",
     "imagen": "img/cocada.jpg"
   },
   {
@@ -67,6 +76,7 @@
     "nombre": "Alfajores",
     "descripcion": "Galleta rellena de manjar y espolvoreada con azúcar impalpable.",
     "precio": 0.35,
+    "categoria": "Dulces individuales",
     "imagen": "img/alfajores.jpg"
   },
   {
@@ -74,6 +84,7 @@
     "nombre": "Bolitas de Nuez",
     "descripcion": "Manjar de leche condensada con nuez, cubierto de azúcar impalpable.",
     "precio": 0.25,
+    "categoria": "Dulces individuales",
     "imagen": "img/bolitas-nuez.jpg"
   },
   {
@@ -81,6 +92,7 @@
     "nombre": "Quesadillas",
     "descripcion": "Quesadillas medianas horneadas, suaves y espolvoreadas con azúcar.",
     "precio": 0.50,
+    "categoria": "Dulces individuales",
     "imagen": "img/quesadillas.jpg"
   },
   {
@@ -88,6 +100,7 @@
     "nombre": "Caja de Quesos",
     "descripcion": "Cajita de 34 unidades de quesitos de leche. Ideal para compartir.",
     "precio": 5.00,
+    "categoria": "Cajas y surtidos",
     "imagen": "img/caja-quesos.jpg"
   },
   {
@@ -95,6 +108,7 @@
     "nombre": "Caja Grande Surtida",
     "descripcion": "Caja grande de 50 unidades de dulces surtidos de Corpus. ¡La más completa!",
     "precio": 11.00,
+    "categoria": "Cajas y surtidos",
     "imagen": "img/caja-grande.jpg"
   },
   {
@@ -102,6 +116,7 @@
     "nombre": "Caja Pequeña Surtida",
     "descripcion": "Caja pequeña de 25 unidades de dulces surtidos de Corpus.",
     "precio": 6.00,
+    "categoria": "Cajas y surtidos",
     "imagen": "img/caja-pequena.jpg"
   }
 ]

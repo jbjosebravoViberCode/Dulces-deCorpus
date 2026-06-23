@@ -38,24 +38,50 @@ fetch("data/productos.json")
 // ============================================================
 function dibujarProductos() {
   grid.innerHTML = ""; // limpiamos el "Cargando..."
+
+  // Agrupamos los productos por su categoría, manteniendo el orden de aparición
+  const categorias = [];
   productos.forEach((p) => {
-    const tarjeta = document.createElement("article");
-    tarjeta.className = "bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 transition";
-    tarjeta.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}" class="h-48 w-full object-cover"
-           onerror="this.onerror=null; this.src='img/placeholder.svg';">
-      <div class="p-5">
-        <h4 class="text-lg font-bold mb-1">${p.nombre}</h4>
-        <p class="text-sm mb-3">${p.descripcion}</p>
-        <div class="flex items-center justify-between">
-          <span class="text-xl font-bold text-cacao">$${p.precio.toFixed(2)}</span>
-          <button data-id="${p.id}"
-                  class="btn-agregar bg-lila px-4 py-1.5 rounded-full text-sm font-semibold hover:scale-105 transition">
-            Agregar +
-          </button>
-        </div>
-      </div>`;
-    grid.appendChild(tarjeta);
+    const cat = p.categoria || "Otros";
+    if (!categorias.includes(cat)) categorias.push(cat);
+  });
+
+  // Por cada categoría creamos un subtítulo + su propia rejilla de tarjetas
+  categorias.forEach((cat) => {
+    const bloque = document.createElement("div");
+
+    const titulo = document.createElement("h4");
+    titulo.className = "text-2xl font-bold mb-6 text-center";
+    titulo.textContent = cat;
+    bloque.appendChild(titulo);
+
+    const rejilla = document.createElement("div");
+    rejilla.className = "grid gap-8 sm:grid-cols-2 lg:grid-cols-3";
+
+    productos
+      .filter((p) => (p.categoria || "Otros") === cat)
+      .forEach((p) => {
+        const tarjeta = document.createElement("article");
+        tarjeta.className = "bg-white rounded-2xl shadow-md overflow-hidden hover:-translate-y-1 transition";
+        tarjeta.innerHTML = `
+          <img src="${p.imagen}" alt="${p.nombre}" class="h-48 w-full object-cover"
+               onerror="this.onerror=null; this.src='img/placeholder.svg';">
+          <div class="p-5">
+            <h5 class="text-lg font-bold mb-1">${p.nombre}</h5>
+            <p class="text-sm mb-3">${p.descripcion}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xl font-bold text-cacao">$${p.precio.toFixed(2)}</span>
+              <button data-id="${p.id}"
+                      class="btn-agregar bg-lila px-4 py-1.5 rounded-full text-sm font-semibold hover:scale-105 transition">
+                Agregar +
+              </button>
+            </div>
+          </div>`;
+        rejilla.appendChild(tarjeta);
+      });
+
+    bloque.appendChild(rejilla);
+    grid.appendChild(bloque);
   });
 
   // Conectamos cada botón "Agregar"
