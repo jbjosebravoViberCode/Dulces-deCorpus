@@ -184,14 +184,43 @@ overlay.addEventListener("click", cerrarCarrito);
 btnWhatsapp.addEventListener("click", () => {
   if (carrito.length === 0) return;
 
-  let mensaje = "¡Hola Carmita! 🍬 Quiero hacer este pedido:%0A%0A";
+  // Leemos los datos que escribió el cliente
+  const nombre    = document.getElementById("cliente-nombre").value.trim();
+  const direccion = document.getElementById("cliente-direccion").value.trim();
+  const telefono  = document.getElementById("cliente-telefono").value.trim();
+  const nota      = document.getElementById("cliente-nota").value.trim();
+  const aviso     = document.getElementById("aviso-form");
+
+  // Validamos los datos obligatorios (nombre y dirección)
+  if (!nombre || !direccion) {
+    aviso.classList.remove("hidden");
+    return;
+  }
+  aviso.classList.add("hidden");
+
+  // Armamos el mensaje con saltos de línea reales (\n)
+  let mensaje = "¡Hola Carmita! 🍬 Quiero hacer este pedido:\n\n";
   carrito.forEach((i) => {
     const subtotal = (i.producto.precio * i.cantidad).toFixed(2);
-    mensaje += `• ${i.cantidad} x ${i.producto.nombre} — $${subtotal}%0A`;
+    mensaje += `• ${i.cantidad} x ${i.producto.nombre} — $${subtotal}\n`;
   });
   const total = carrito.reduce((s, i) => s + i.producto.precio * i.cantidad, 0);
-  mensaje += `%0A*Total: $${total.toFixed(2)}*%0A%0A¿Me confirmas disponibilidad? ¡Gracias! 😊`;
+  mensaje += `\n*Total: $${total.toFixed(2)}*\n\n`;
 
-  // Abrimos WhatsApp con el mensaje ya escrito
-  window.open(`https://wa.me/${WHATSAPP}?text=${mensaje}`, "_blank");
+  // Datos de entrega del cliente
+  mensaje += `👤 *Nombre:* ${nombre}\n`;
+  mensaje += `📍 *Dirección:* ${direccion}\n`;
+  if (telefono) mensaje += `📞 *Teléfono:* ${telefono}\n`;
+  if (nota)     mensaje += `📝 *Nota:* ${nota}\n`;
+  mensaje += `\n¿Me confirmas disponibilidad y el total? ¡Gracias! 😊`;
+
+  // encodeURIComponent maneja tildes, espacios y emojis correctamente
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`, "_blank");
+});
+
+// Si el cliente empieza a escribir, ocultamos el aviso de error
+["cliente-nombre", "cliente-direccion"].forEach((id) => {
+  document.getElementById(id).addEventListener("input", () => {
+    document.getElementById("aviso-form").classList.add("hidden");
+  });
 });
