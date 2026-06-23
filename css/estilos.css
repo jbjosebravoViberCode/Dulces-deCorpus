@@ -1,0 +1,20 @@
+/* ====== Estilos propios (lo que Tailwind no cubre) ====== */
+
+/* Scroll suave al hacer clic en los enlaces del menú */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Compensa la barra fija para que los títulos no queden tapados al navegar */
+section {
+  scroll-margin-top: 80px;
+}
+
+/* Barra de scroll del carrito más bonita */
+#items-carrito::-webkit-scrollbar {
+  width: 6px;
+}
+#items-carrito::-webkit-scrollbar-thumb {
+  background: #E4D7F5;
+  border-radius: 10px;
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dulces de Corpus artesanales: higos, dulce de leche, quesadillas y más. Tienda familiar Carmita Garate, Cuenca - Ecuador.">
+  <title>Dulces de Corpus · Carmita Garate</title>
+
+  <!-- Tailwind CSS por CDN: sin instalar nada -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Configuramos NUESTROS colores pastel -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            rosa:    '#F7D6E0',
+            durazno: '#FCE5CD',
+            menta:   '#D6EFE0',
+            lila:    '#E4D7F5',
+            crema:   '#FFF9F3',
+            cacao:   '#8A6D5B',
+          },
+          fontFamily: { titulo: ['Poppins', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body class="bg-crema text-cacao font-titulo">
+
+  <!-- ===== BARRA DE NAVEGACIÓN ===== -->
+  <header class="bg-rosa/80 backdrop-blur sticky top-0 z-50 shadow-sm">
+    <nav class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-xl font-bold">🍬 Carmita Garate</h1>
+
+      <ul class="hidden md:flex gap-6 text-sm font-semibold">
+        <li><a href="#inicio"   class="hover:text-white transition">Inicio</a></li>
+        <li><a href="#nosotros" class="hover:text-white transition">Nosotros</a></li>
+        <li><a href="#catalogo" class="hover:text-white transition">Catálogo</a></li>
+        <li><a href="#contacto" class="hover:text-white transition">Contacto</a></li>
+      </ul>
+
+      <!-- Botón del carrito -->
+      <button id="btn-carrito" class="relative bg-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:scale-105 transition">
+        🛒 Carrito
+        <span id="contador-carrito"
+              class="absolute -top-2 -right-2 bg-lila text-cacao text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- ===== INICIO (HERO) ===== -->
+  <section id="inicio" class="text-center py-20 px-4 bg-gradient-to-b from-durazno to-crema">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4">Dulces de Corpus hechos con amor</h2>
+    <p class="max-w-xl mx-auto mb-8">Tradición familiar cuencana: cocadas, alfajores, quesadillas, manjar y más,
+       preparados como antaño para endulzar tu Corpus Christi.</p>
+    <a href="#catalogo" class="inline-block bg-lila px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition">
+       Ver catálogo 🍯
+    </a>
+  </section>
+
+  <!-- ===== NOSOTROS ===== -->
+  <section id="nosotros" class="max-w-4xl mx-auto py-16 px-4 text-center">
+    <h3 class="text-3xl font-bold mb-4">Sobre nosotros</h3>
+    <p class="leading-relaxed">En el corazón de Cuenca, donde las calles empedradas guardan historias y las
+       festividades se viven con devoción y alegría, nace <strong>Dulces de Corpus Carmita Garate</strong>.
+       Inspirados en la emblemática celebración del Corpus Christi, mantenemos viva una tradición que une
+       generaciones a través del sabor, el aroma y la memoria. Cada dulce es una muestra del arte repostero
+       cuencano, heredado de nuestras abuelas y perfeccionado con amor: manjar, coco, nuez, frutas y
+       delicadas masas horneadas que evocan las fiestas del Corpus.</p>
+
+    <div class="grid sm:grid-cols-3 gap-6 mt-10">
+      <div class="bg-menta rounded-2xl p-6 shadow-sm">
+        <div class="text-3xl mb-2">🌿</div>
+        <h4 class="font-bold mb-1">Artesanal</h4>
+        <p class="text-sm">Sin conservantes, como en casa.</p>
+      </div>
+      <div class="bg-durazno rounded-2xl p-6 shadow-sm">
+        <div class="text-3xl mb-2">👵</div>
+        <h4 class="font-bold mb-1">Recetas familiares</h4>
+        <p class="text-sm">Tradición de varias generaciones.</p>
+      </div>
+      <div class="bg-lila rounded-2xl p-6 shadow-sm">
+        <div class="text-3xl mb-2">🚚</div>
+        <h4 class="font-bold mb-1">Pedidos a domicilio</h4>
+        <p class="text-sm">Entregamos en toda la ciudad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATÁLOGO (se llena solo desde el JSON) ===== -->
+  <section id="catalogo" class="max-w-6xl mx-auto py-16 px-4">
+    <h3 class="text-3xl font-bold text-center mb-10">Nuestro catálogo</h3>
+    <div id="grid-productos" class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Aquí JavaScript insertará las tarjetas automáticamente -->
+      <p class="text-center col-span-full">Cargando dulces... 🍬</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="bg-menta py-16 px-4">
+    <div class="max-w-md mx-auto text-center">
+      <h3 class="text-3xl font-bold mb-6">Contáctanos</h3>
+      <p class="mb-4">📞 0987905064 · 📍 Cuenca, Ecuador</p>
+      <p class="mb-6 text-sm">Haz tu pedido por WhatsApp y coordina tu entrega</p>
+      <a href="https://wa.me/593987905064" target="_blank" rel="noopener"
+         class="inline-block bg-white px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition">
+         Escríbenos por WhatsApp 💬
+      </a>
+    </div>
+  </section>
+
+  <footer class="text-center py-6 text-sm bg-rosa/60">
+    © 2026 Dulces de Corpus Carmita Garate · Hecho con 🩷 en Cuenca
+  </footer>
+
+  <!-- ===== PANEL DEL CARRITO (oculto hasta hacer clic) ===== -->
+  <div id="overlay-carrito" class="fixed inset-0 bg-black/30 z-50 hidden"></div>
+  <aside id="panel-carrito"
+         class="fixed top-0 right-0 h-full w-80 max-w-[85%] bg-crema shadow-2xl z-50 translate-x-full transition-transform duration-300 flex flex-col">
+    <div class="flex items-center justify-between p-4 bg-rosa/80">
+      <h3 class="font-bold text-lg">🛒 Tu pedido</h3>
+      <button id="cerrar-carrito" class="text-2xl leading-none hover:scale-110 transition">&times;</button>
+    </div>
+
+    <div id="items-carrito" class="flex-1 overflow-y-auto p-4 space-y-3">
+      <!-- items dinámicos -->
+    </div>
+
+    <div class="p-4 border-t border-rosa/40">
+      <div class="flex justify-between font-bold text-lg mb-4">
+        <span>Total:</span>
+        <span id="total-carrito">$0.00</span>
+      </div>
+      <button id="pedir-whatsapp"
+              class="w-full bg-menta py-3 rounded-full font-semibold shadow hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed"
+              disabled>
+        Hacer pedido por WhatsApp 💬
+      </button>
+    </div>
+  </aside>
+
+  <script src="js/catalogo.js"></script>
+</body>
+</html>
