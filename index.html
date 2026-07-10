@@ -61,12 +61,29 @@
     </nav>
   </header>
 
-  <!-- ===== INICIO (HERO) ===== -->
-  <section id="inicio" class="text-center py-20 px-4 bg-gradient-to-b from-durazno to-crema">
-    <h2 class="text-4xl md:text-5xl font-bold mb-4">Dulces de Corpus hechos con amor</h2>
-    <p class="max-w-xl mx-auto mb-8">Tradición familiar cuencana: cocadas, alfajores, quesadillas, manjar y más,
-       preparados como antaño para endulzar tu Corpus Christi.</p>
-    <a href="#catalogo" class="inline-block bg-lila px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition">
+  <!-- ===== INICIO (HERO con carrusel) ===== -->
+  <section id="inicio" class="text-center py-12 px-4 bg-gradient-to-b from-durazno to-crema">
+    <h2 class="text-2xl md:text-3xl font-bold mb-2">Dulces de Corpus hechos con amor</h2>
+    <p class="max-w-lg mx-auto mb-6 text-sm md:text-base">Tradición familiar cuencana: cocadas, alfajores,
+       quesadillas, manjar y más, preparados como antaño para endulzar tu Corpus Christi.</p>
+
+    <!-- Carrusel de imágenes -->
+    <div id="carrusel" class="relative max-w-3xl mx-auto rounded-2xl overflow-hidden shadow-lg bg-white">
+      <div id="carrusel-track" class="flex transition-transform duration-700 ease-in-out">
+        <!-- Los slides los inserta carrusel.js -->
+      </div>
+
+      <!-- Flechas -->
+      <button id="carrusel-prev" aria-label="Anterior"
+              class="absolute left-2 top-1/2 -translate-y-1/2 bg-white/80 text-cacao w-9 h-9 rounded-full shadow flex items-center justify-center text-2xl leading-none hover:bg-white transition">‹</button>
+      <button id="carrusel-next" aria-label="Siguiente"
+              class="absolute right-2 top-1/2 -translate-y-1/2 bg-white/80 text-cacao w-9 h-9 rounded-full shadow flex items-center justify-center text-2xl leading-none hover:bg-white transition">›</button>
+
+      <!-- Puntos indicadores -->
+      <div id="carrusel-dots" class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2"></div>
+    </div>
+
+    <a href="#catalogo" class="inline-block mt-6 bg-lila px-8 py-3 rounded-full font-semibold shadow hover:scale-105 transition">
        Ver catálogo 🍯
     </a>
   </section>
@@ -174,5 +191,6 @@
   </aside>
 
   <script src="js/catalogo.js"></script>
+  <script src="js/carrusel.js"></script>
 </body>
 </html>

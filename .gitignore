@@ -7,3 +7,9 @@ Thumbs.db
 
 # Logs
 *.log
+
+# Copias de pagina guardadas por el navegador ("Guardar como...")
+*_files/
+Dulces de Corpus*.html
+*.descarga
+saved_resource
