@@ -21,7 +21,9 @@ const btnWhatsapp   = document.getElementById("pedir-whatsapp");
 // ============================================================
 // 1. CARGAR LOS PRODUCTOS DESDE EL JSON
 // ============================================================
-fetch("data/productos.json")
+// El "?v=" + Date.now() evita que el navegador use una versión vieja guardada (caché).
+// Así, cada vez que actualices precios o dulces, el cliente ve los cambios al instante.
+fetch("data/productos.json?v=" + Date.now())
   .then((respuesta) => respuesta.json())
   .then((data) => {
     productos = data;
