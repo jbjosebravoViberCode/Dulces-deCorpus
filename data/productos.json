@@ -11,7 +11,7 @@
     "id": 2,
     "nombre": "Bolitas Frutales",
     "descripcion": "Bolitas de azúcar con sabor a frutas. Las favoritas de los niños.",
-    "precio": 0.15,
+    "precio": 0.25,
     "categoria": "Dulces individuales",
     "imagen": "img/bolitas-frutales.jpg"
   },
@@ -51,7 +51,7 @@
     "id": 7,
     "nombre": "Huevitos de Maní",
     "descripcion": "Maní cubierto de manjar. Crujiente por dentro, suave por fuera.",
-    "precio": 0.15,
+    "precio": 0.25,
     "categoria": "Dulces individuales",
     "imagen": "img/huevitos-mani.jpg"
   },
@@ -59,7 +59,7 @@
     "id": 8,
     "nombre": "Galletas",
     "descripcion": "Galletitas de maíz y arepas. Doradas, caseras y crujientes.",
-    "precio": 0.15,
+    "precio": 0.25,
     "categoria": "Dulces individuales",
     "imagen": "img/galletas.jpg"
   },
